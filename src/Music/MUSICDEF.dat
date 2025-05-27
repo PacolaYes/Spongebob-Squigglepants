@@ -34,3 +34,19 @@ Authors = Asuka_Ohta,_Ryo_Nagamatsu
 Soundtestpage = 1
 Soundtestcond = 0
 BPM = 81
+
+Lump TERISN
+Title = Tetris_Music_A
+Alttitle = Korobeiniki
+Authors = Kazumi_Totaka,_Hirokazu_Tanaka
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 150
+
+Lump TERISC
+Title = Tetris_Music_A_Critical
+Alttitle = Korobeiniki
+Authors = Kazumi_Totaka,_Hirokazu_Tanaka
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 170
