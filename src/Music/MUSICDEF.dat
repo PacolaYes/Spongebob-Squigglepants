@@ -36,7 +36,7 @@ Soundtestcond = 0
 BPM = 81
 
 Lump TERISN
-Title = Tetris_Music_A
+Title = Music_A
 Alttitle = Korobeiniki
 Authors = Kazumi_Totaka,_Hirokazu_Tanaka
 Soundtestpage = 1
@@ -44,9 +44,33 @@ Soundtestcond = 0
 BPM = 150
 
 Lump TERISC
-Title = Tetris_Music_A_Critical
+Title = Music_A_Critical
 Alttitle = Korobeiniki
 Authors = Kazumi_Totaka,_Hirokazu_Tanaka
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 170
+
+Lump PUYONO
+Title = Stages_1-4
+Alttitle = Dr._Robotnik's_Mean_Bean_Machine
+Authors = Masanori_Hikichi,_Masayuki
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 125
+
+Lump PUYOCR
+Title = Stages_5-8
+Alttitle = Dr._Robotnik's_Mean_Bean_Machine
+Authors = Masanori_Hikichi,_Masayuki
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 145
+
+Lump PUYO2P
+Title = 2_Player_VS
+Alttitle = Dr._Robotnik's_Mean_Bean_Machine
+Authors = David_Javelosa
 Soundtestpage = 1
 Soundtestcond = 0
 BPM = 170
