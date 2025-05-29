@@ -8,6 +8,7 @@ local ogVars = Squigglepants.require("Game/voting.lua")
 
 addHook("MapChange", function()
 	Squigglepants = $.copyTo(ogVars.global, $) -- reset variables that we should :D
+	Squigglepants.hud.changeState("base", true)
 end)
 
 addHook("MapLoad", function()
@@ -15,11 +16,11 @@ addHook("MapLoad", function()
 end)
 
 addHook("PlayerSpawn", function(p)
-	p.squigglepants = ogVars.player
+	p.squigglepants = Squigglepants.copy(ogVars.player)
 end)
 
 addHook("PlayerThink", function(p)
 	if p.squigglepants == nil then
-		p.squigglepants = ogVars.player
+		p.squigglepants = Squigglepants.copy(ogVars.player)
 	end
 end)

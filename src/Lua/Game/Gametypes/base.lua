@@ -43,7 +43,7 @@ function Squigglepants.getGametypeDef(num)
 	
 	return Squigglepants.gametypes[num] or Squigglepants.gametypes[1]
 end
-
+/*
 for i = 1, 10 do
 	Squigglepants.addGametype({
 		name = "Test "+i,
@@ -51,4 +51,4 @@ for i = 1, 10 do
 		description = "i'm testing",
 		exclusive = false
 	})
-end
+end*/

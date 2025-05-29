@@ -17,6 +17,7 @@ on:
         - '**.md'
         - '.github/**'
         - '.gitignore'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -33,14 +34,23 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git fetch --all
+        currentLoop=1
         for branch in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/); do
             if [ -n "$(git ls-tree --name-only $branch .ignore)" ] && [ "$branch" != "origin/main" ] || [ "$branch" == "origin" ]; then
                 echo $branch was skipped!
                 continue
             fi
-            echo $branch was merged!
-            git merge $branch --no-commit --no-ff -X theirs
+            git add .
+            git stash
+            echo $branch is being merged
+            git merge $branch --no-commit --no-ff --allow-unrelated-histories -X theirs
             git reset origin/main
+            git add .
+            if [ "$currentLoop" -gt 1 ]; then
+                git stash pop
+            fi
+            currentLoop=$((currentLoop+1))
+            echo $branch was merged!
         done
         
     

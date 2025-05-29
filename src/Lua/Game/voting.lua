@@ -134,12 +134,14 @@ addHook("PreThinkFrame", function()
 			and not (vote.lastbuttons & BT_JUMP) then
 				S_StartSound(nil, sfx_spvsel, p)
 				vote.hasSelected = true
+				HUD.changeState("votingScreen-voteShowcase")
 			end
 		else
 			if (p.cmd.buttons & BT_SPIN)
 			and not (vote.lastbuttons & BT_SPIN) then
 				S_StartSound(nil, sfx_thok, p)
 				vote.hasSelected = false
+				HUD.changeState("votingScreen-voting")
 			end
 		end
 		

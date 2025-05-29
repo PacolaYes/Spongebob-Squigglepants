@@ -42,15 +42,15 @@ function Squigglepants.hud.addState(t)
 	if t == nil
 	or t.name == nil then return end
 	
+	local baseCopy = Squigglepants.copy(baseState)
 	if t.type == nil then
 		t.type = "game"
 	end
 	local type = t.type
-	t = Squigglepants.copyTo($, baseState)
+	t = Squigglepants.copyTo($, baseCopy)
 	t.type = nil
 	
 	if not Squigglepants.hud.states[type] then
-		local baseCopy = Squigglepants.copy(baseState)
 		baseCopy.type = type
 		Squigglepants.hud.states[type] = {
 			base = baseCopy
@@ -64,15 +64,17 @@ function Squigglepants.hud.changeState(newState, force)
 	if newState == nil then return end
 	
 	local foundState = false
-	for _, val in pairs(Squigglepants.hud.states) do
-		for key in pairs(val) do
-			if key == newState then
-				foundState = true
-				break 2
-			end
+	for key in pairs(Squigglepants.hud.states) do
+		if Squigglepants.hud.states[key][newState] then
+			foundState = true
+			break 
 		end
 	end
 	if not foundState then return end
+	
+	if newState == curState then
+		force = true
+	end
 	
 	stateTics = 0
 	
@@ -101,7 +103,9 @@ function Squigglepants.hud.getCurrentPhase()
 end
 
 local function triggerState(hudtype, v, ...)
-	if not Squigglepants.hud.states[hudtype]
+	if gametype ~= GT_SQUIGGLEPANTS
+	or not Squigglepants
+	or not Squigglepants.hud.states[hudtype]
 	or not Squigglepants.hud.states[hudtype][curState] then return end
 	
 	local state = Squigglepants.hud.states[hudtype][curState]
@@ -110,9 +114,10 @@ local function triggerState(hudtype, v, ...)
 	and state[statePhase](state, v, stateTics, ...) then
 		if statePhase == "exit"
 			Squigglepants.hud.changeState(nextState, true)
-			return
+			state = Squigglepants.hud.states[hudtype][curState]
+		else
+			statePhase = nil
 		end
-		statePhase = nil
 	end
 	
 	local thinkResult = state:think(v, stateThinkTics, ...)

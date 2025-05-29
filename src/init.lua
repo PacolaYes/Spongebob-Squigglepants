@@ -57,6 +57,10 @@ Squigglepants.dofile("Game/Gametypes/base.lua") -- base of the seperate gametype
 Squigglepants.dofile("Game/base.lua") -- base of the whole thing
 Squigglepants.dofile("Game/voting.lua")
 
+Squigglepants.dofile("Game/Gametypes/Evil Leafy/definition.lua")
+
 Squigglepants.dofile("HUD/system.lua")
 Squigglepants.dofile("HUD/discordlink.lua")
+
 Squigglepants.dofile("HUD/Voting Screen/voting.lua")
+Squigglepants.dofile("HUD/Voting Screen/voted.lua")
