@@ -18,7 +18,7 @@ local function enterFunc(self, v, tics, p)
 	end
 	
 	local rateThing = FixedDiv(tics, TICRATE/5)
-	self.x = ease.outsine(rateThing, 320*dupx + 160*dupx, 160*FU)
+	self.x = ease.linear(rateThing, 320*dupx + 160*dupx, 160*FU)
 	
 	if rateThing >= FU then return true end
 end
