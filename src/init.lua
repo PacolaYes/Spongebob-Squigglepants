@@ -10,7 +10,7 @@ G_AddGametype({ -- get us our gametype
     name = "SRB2: Epic Minigames",
     identifier = "squigglepants",
     typeoflevel = TOL_COOP|TOL_SQUIGGLEPANTS,
-    rules = GTR_SPECTATORS|GTR_FRIENDLY|GTR_NOSPECTATORSPAWN|GTR_NOTITLECARD,
+    rules = GTR_EMERALDTOKENS|GTR_EMERALDHUNT|GTR_SPAWNENEMIES,
     intermissiontype = int_none,
     headercolor = 103,
     description = "temp"
@@ -57,7 +57,8 @@ Squigglepants.dofile("Game/Gametypes/base.lua") -- base of the seperate gametype
 Squigglepants.dofile("Game/base.lua") -- base of the whole thing
 Squigglepants.dofile("Game/voting.lua")
 
-Squigglepants.dofile("Game/Gametypes/Evil Leafy/definition.lua")
+-- Squigglepants.dofile("Game/Gametypes/Evil Leafy/definition.lua") -- TODO: make this one
+Squigglepants.dofile("Game/Gametypes/Co-op/base.lua")
 
 Squigglepants.dofile("HUD/system.lua")
 Squigglepants.dofile("HUD/discordlink.lua")

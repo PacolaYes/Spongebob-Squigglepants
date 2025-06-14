@@ -74,12 +74,12 @@ local function thinkFunc(self, v, tics, p)
 		x = $ + patch.width * mapScale + mapMarginHoriz
 	end
 	--v.drawString(160*FU, 100*FU, p.squigglepants.votingScreen.selected, 0, "fixed-center")
-	v.drawString(160*FU, 108*FU, "secs left: "+(10*TICRATE - voteScreen.tics)/TICRATE, 0, "fixed-center")
+	v.drawString(160*FU, 108*FU, "secs left: "+voteScreen.tics/TICRATE, 0, "fixed-center")
 end
 
 local function exitFunc(self, v, tics)
 	local rateThing = FixedDiv(tics, TICRATE/5)
-	self.x = ease.linear(rateThing, 160*FU, -160*FU)
+	self.x = ease.insine(rateThing, 160*FU, -160*FU)
 	
 	if rateThing >= FU then return true end
 end

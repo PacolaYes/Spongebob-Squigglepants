@@ -1,0 +1,6 @@
+
+code shtuff:
+
+add proper splitscrene suport
+finish voting
+	- add selecting anim
