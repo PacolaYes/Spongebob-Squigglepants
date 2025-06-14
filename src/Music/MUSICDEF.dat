@@ -33,7 +33,7 @@ Alttitle = Mario_Kart_Wii
 Authors = Asuka_Ohta,_Ryo_Nagamatsu
 Soundtestpage = 1
 Soundtestcond = 0
-BPM = 81
+BPM = 161
 
 Lump RACTIM
 Title = Race_Against_Time!
@@ -75,10 +75,18 @@ Soundtestpage = 1
 Soundtestcond = 0
 BPM = 135
 
-Lump COSCLO
-Title = Cosmic_Clones
-Alttitle = Super_Mario_Galaxy_2
-Authors = Takeshi_Hama,_Mahito Yokota,_Asuka_Hayazaki
+Lump SMKINV
+Title = Starman
+Alttitle = Super_Mario_kart
+Authors = Soyo_Oka
 Soundtestpage = 1
 Soundtestcond = 0
-BPM = 155
+BPM = 76
+
+lump KSSHLE
+Title = Escape_the_Halberd
+Alttitle = Kirby_Super_Star
+Authors = Jun_Ishikawa
+Soundtestpage = 1
+Soundtestcond = 0
+BPM = 239
