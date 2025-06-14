@@ -40,13 +40,14 @@ jobs:
                 echo $branch was skipped!
                 continue
             fi
-            git add .
-            git stash
             echo $branch is being merged
+            git stash
             git merge $branch --no-commit --no-ff --allow-unrelated-histories -X theirs
             git reset origin/main
             git add .
-            if [ "$currentLoop" -gt 1 ]; then
+            
+            stashList=$(git stash list)
+            if [ "$currentLoop" -gt 1 ] && [ "$stashList" != "" ]; then
                 git stash pop
             fi
             currentLoop=$((currentLoop+1))
